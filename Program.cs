@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using api.Data;
 using api.Dtos;
+using api.Interfaces;
+using api.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
 
-
+builder.Services.AddScoped<IStockRepository, StockRepository>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
