@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using api.Interfaces;
 using api.Repository;
+using Microsoft.AspNetCore.Authorization;
 
 namespace api.Controllers
 {
@@ -20,7 +21,7 @@ namespace api.Controllers
 
       
 
-        
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<List<StockDto>>> GetAllStocksAsync() {
             var stocks = await stockRepo.GetAllStocksAsync();
@@ -48,6 +49,7 @@ namespace api.Controllers
             return Ok(dto);
         }
 
+        [Authorize]
         [HttpPost("create")]
         public async Task<ActionResult<StockDto>> CreateStockAsync([FromBody] CreateStockRequest createStockRequest) {
             if (createStockRequest == null)
@@ -61,6 +63,7 @@ namespace api.Controllers
             return Ok(createdStock.toStockDto());
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateStockAsync([FromRoute] int id, [FromBody] UpdateStockRequest updateStockRequest) {
 
@@ -89,7 +92,8 @@ namespace api.Controllers
             
         
         }
-
+         
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteStockAsync([FromRoute] int id) {
             var existingStock = await stockRepo.GetByIdAsync(id);

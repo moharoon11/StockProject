@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/innowave/Haroon/dotnetprojects/StockProject/FirstProject.csproj": {}
+    "/home/haroon/DotNetProjects/StockProject/FirstProject.csproj": {}
   },
   "projects": {
-    "/home/innowave/Haroon/dotnetprojects/StockProject/FirstProject.csproj": {
+    "/home/haroon/DotNetProjects/StockProject/FirstProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/innowave/Haroon/dotnetprojects/StockProject/FirstProject.csproj",
+        "projectUniqueName": "/home/haroon/DotNetProjects/StockProject/FirstProject.csproj",
         "projectName": "FirstProject",
-        "projectPath": "/home/innowave/Haroon/dotnetprojects/StockProject/FirstProject.csproj",
-        "packagesPath": "/home/innowave/.nuget/packages/",
-        "outputPath": "/home/innowave/Haroon/dotnetprojects/StockProject/obj/",
+        "projectPath": "/home/haroon/DotNetProjects/StockProject/FirstProject.csproj",
+        "packagesPath": "/home/haroon/.nuget/packages/",
+        "outputPath": "/home/haroon/DotNetProjects/StockProject/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/innowave/.nuget/NuGet/NuGet.Config"
+          "/home/haroon/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,12 +32,21 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.15, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.15, )"
@@ -49,6 +58,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[8.0.4, )"
+            },
+            "Microsoft.IdentityModel.JsonWebTokens": {
+              "target": "Package",
+              "version": "[8.9.0, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
@@ -78,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.115/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
