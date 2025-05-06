@@ -21,13 +21,13 @@ namespace api.Repository
 
         public async Task<List<Stock>> GetAllStocksAsync()
         {
-            var stocks = await _context.Stocks.ToListAsync();
+            var stocks = await _context.Stocks.Include(s => s.Comments).ToListAsync();
             return stocks.ToList();
         }
 
         public async Task<Stock> GetByIdAsync(int id)
         {
-            var stock = await _context.Stocks.FindAsync(id);
+            var stock = await _context.Stocks.Include(s => s.Comments).FirstOrDefaultAsync(s => s.Id == id);
             return stock;
         }
 

@@ -1,10 +1,9 @@
 using api.Models;
 
-namespace api.Dtos
-{
-    public class CommentDto
+namespace api.Dtos {
+
+    public class CreateCommentRequest
     {
-        public int Id { get; set; }
 
         public string Title { get; set; } = string.Empty;
 
@@ -16,9 +15,5 @@ namespace api.Dtos
 
         // navigation property
         public Stock? Stock { get; set; }
-
-
-
-      
     }
 }

@@ -3137,19 +3137,19 @@
     ]
   },
   "packageFolders": {
-    "/home/haroon/.nuget/packages/": {}
+    "/home/innowave/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/haroon/DotNetProjects/StockProject/FirstProject.csproj",
+      "projectUniqueName": "/home/innowave/Haroon/dotnetprojects/StockProject/FirstProject.csproj",
       "projectName": "FirstProject",
-      "projectPath": "/home/haroon/DotNetProjects/StockProject/FirstProject.csproj",
-      "packagesPath": "/home/haroon/.nuget/packages/",
-      "outputPath": "/home/haroon/DotNetProjects/StockProject/obj/",
+      "projectPath": "/home/innowave/Haroon/dotnetprojects/StockProject/FirstProject.csproj",
+      "packagesPath": "/home/innowave/.nuget/packages/",
+      "outputPath": "/home/innowave/Haroon/dotnetprojects/StockProject/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/haroon/.nuget/NuGet/NuGet.Config"
+        "/home/innowave/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -3167,11 +3167,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3226,7 +3221,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.115/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -37,16 +37,16 @@ namespace FirstProject.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<int?>("StockId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("stockId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("stockId");
+                    b.HasIndex("StockId");
 
                     b.ToTable("Comments");
                 });
@@ -113,10 +113,15 @@ namespace FirstProject.Migrations
             modelBuilder.Entity("api.Models.Comment", b =>
                 {
                     b.HasOne("api.Models.Stock", "Stock")
-                        .WithMany()
-                        .HasForeignKey("stockId");
+                        .WithMany("Comments")
+                        .HasForeignKey("StockId");
 
                     b.Navigation("Stock");
+                });
+
+            modelBuilder.Entity("api.Models.Stock", b =>
+                {
+                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }

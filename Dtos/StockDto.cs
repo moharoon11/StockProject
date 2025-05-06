@@ -20,9 +20,7 @@ namespace api.Dtos {
 
         public long MarketCap { get; set; }
 
-      //   public List<Comment> Comment { get; set; }
-
-
+        public List<Comment> Comments { get; set; }
 
     }
 }

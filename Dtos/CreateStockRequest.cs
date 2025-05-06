@@ -1,4 +1,4 @@
-
+using api.Models;
 
 namespace api.Dtos {
 
@@ -15,5 +15,7 @@ namespace api.Dtos {
          public string Industry { get; set; }
 
          public long MarketCap { get; set; }
+
+         public List<Comment>? Comments { get; set; }
     }
 }

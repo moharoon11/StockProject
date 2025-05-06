@@ -21,7 +21,7 @@ namespace api.Controllers
 
       
 
-        [Authorize]
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<List<StockDto>>> GetAllStocksAsync() {
             var stocks = await stockRepo.GetAllStocksAsync();
@@ -38,6 +38,7 @@ namespace api.Controllers
 
 
          [HttpGet("{id}")]
+         [AllowAnonymous]
         public async Task<ActionResult<StockDto>> GetByIdAsync([FromRoute] int id) {
             var stock = await stockRepo.GetByIdAsync(id);
             if (stock == null)
@@ -49,7 +50,7 @@ namespace api.Controllers
             return Ok(dto);
         }
 
-        [Authorize]
+      
         [HttpPost("create")]
         public async Task<ActionResult<StockDto>> CreateStockAsync([FromBody] CreateStockRequest createStockRequest) {
             if (createStockRequest == null)
@@ -63,7 +64,7 @@ namespace api.Controllers
             return Ok(createdStock.toStockDto());
         }
 
-        [Authorize]
+
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateStockAsync([FromRoute] int id, [FromBody] UpdateStockRequest updateStockRequest) {
 
@@ -93,7 +94,7 @@ namespace api.Controllers
         
         }
          
-        [Authorize(Roles = "Admin")]
+        // [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteStockAsync([FromRoute] int id) {
             var existingStock = await stockRepo.GetByIdAsync(id);

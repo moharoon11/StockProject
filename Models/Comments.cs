@@ -14,7 +14,7 @@
 
           public DateTime CreatedOn { get; set; } = DateTime.Now;
 
-          public int? stockId { get; set; }
+          public int? StockId { get; set; }
 
           // navigation property
           public Stock? Stock { get; set; }

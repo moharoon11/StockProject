@@ -1,3 +1,6 @@
+using api.Models;
+using System.Collections.Generic;
+
 namespace api.Dtos {
 
     public class UpdateStockRequest {
@@ -13,5 +16,7 @@ namespace api.Dtos {
          public string Industry { get; set; }
 
          public long MarketCap { get; set; }
+
+            public List<Comment>? Comments { get; set; }
     }
 }
